@@ -65,15 +65,15 @@ nav a.active {
 .achievement-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
   justify-content: center;
 }
 
 .achievement-card {
-  width: 550px;
-  min-height: 660px;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
 }
-
 
 .achievement-card:hover {
   transform: translateY(-10px);
@@ -86,6 +86,7 @@ nav a.active {
   border-radius: 1rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 0 15px #b74b4b33;
+  object-fit: contain;
 }
 
 .achievement-card h2 {
@@ -98,4 +99,82 @@ nav a.active {
   font-size: 1.4rem;
   color: #ccc;
   line-height: 1.6;
+}
+
+/* Laptop */
+@media (max-width: 1440px) {
+  .achievement-container {
+    gap: 1.5rem;
+  }
+  .achievement-card {
+    max-width: 400px;
+  }
+}
+
+/* iPad (4 รูปต่อแถว) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .achievement-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .achievement-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 2%;
+  }
+  .logo {
+    font-size: 1.6rem;
+  }
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav a {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  .achievement {
+    padding: 7rem 2% 2rem;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .achievement-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .achievement-card {
+    width: 95vw;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 0.95rem;
+  }
+  .achievement-card img {
+    max-height: 220px;
+    object-fit: contain;
+  }
+  .achievement-card h2 {
+    font-size: 1.1rem;
+  }
+  .achievement-card p {
+    font-size: 1rem;
+  }
+  .filter-container label,
+  .filter-container select {
+    font-size: 1rem;
+  }
 }
